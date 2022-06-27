@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/piposaude-estatisticas-covid/static/js/main.e33b8a6a.js",
+    "index.html": "/piposaude-estatisticas-covid/index.html",
+    "main.e33b8a6a.js.map": "/piposaude-estatisticas-covid/static/js/main.e33b8a6a.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.e33b8a6a.js"
+  ]
+}
