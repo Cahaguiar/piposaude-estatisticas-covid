@@ -1,0 +1,17 @@
+header {
+  width: 100%;
+}
+
+header,
+.menu {
+  display: flex;
+}
+
+ol {
+  list-style-type: none;
+}
+
+.logo {
+  width: 152px;
+}
+
