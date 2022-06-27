@@ -8,12 +8,14 @@ const Header = () => {
         <img src={logoAzul} alt='Logo Pipo Saúde' className={styles.logo} />
       </picture>
       <nav className={styles.menu}>
-        <ol>
-          <li>Sobre nós</li>
-          <li><a>A Pipo Saúde</a></li>
-          <li><a>Carreiras</a></li>
-          <li><a>Imprensa</a></li>
-        </ol>
+        <section>
+          <ol>
+            <li>Sobre nós</li>
+            <li><a>A Pipo Saúde</a></li>
+            <li><a>Carreiras</a></li>
+            <li><a>Imprensa</a></li>
+          </ol>
+        </section>
         <ol>
           <li>Para RH</li>
           <li><a>Nossa Solução</a></li>
