@@ -2,17 +2,12 @@ import React, {useState, useEffect} from 'react';
 import { getData } from './services';
 import Header from "./components/header/header.jsx";
 
-
 export default function CountryStatistics(props) { 
   const [items, setItems] = useState([]);
 
   useEffect(function() {
     getData()
     .then((response => response.json()))
-    .then((response => {
-      console.log(response)
-      return response
-      }))
     .then((response) => {
       const resposta= response.response;
       setItems(resposta)
@@ -22,18 +17,29 @@ export default function CountryStatistics(props) {
   return (
     <div className="App">  
       <Header />
-      {items.map(item => {
-        return (
-          <div key={item.country}>
-            <p>Países: {item.country}</p>
-            <p>Total de casos: {item.cases.total}</p>
-            <p>Novos casos: {item.cases.new}</p>
-            <p>Total de óbitos: {item.deaths.total}</p>
-          </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Países</th>
+            <th>Total de Casos</th>
+            <th>Novos Casos</th>
+            <th>Total de Óbitos</th>
+          </tr>
+        </thead>
+        <tbody>
+        {items.map(item => {
+          return (
+          <tr>
+            <td>{item.country}</td>
+            <td>{item.cases.total}</td>
+            <td>{item.cases.new}</td>
+            <td>{item.deaths.total}</td>
+          </tr>
         )
-      }
-      
-      )}
-      </div>
+        })}
+        </tbody>
+        </table>
+    </div>
   )
 }
+
