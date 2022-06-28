@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Header from "./components/header/header";
+//import Header from "./components/header/header";
 
 
 export default function CountryStatistics(props) { 
@@ -16,18 +16,32 @@ export default function CountryStatistics(props) {
     };
     
     fetch('https://covid-193.p.rapidapi.com/statistics', options)
-      .then(response => response.json())
-      .then(response => {
+      .then((response => response.json()))
+      .then((response => {
         console.log(response)
         return response
-        })
-      .then(response => setItems[response])
+        }))
+      .then((response) => {
+        const resposta= response.response;
+        setItems(resposta)
+      })
       .catch(err => console.error(err));
   }, [])
   return (
     <div className="App">  
-      <Header />
-      {items.map(item => <div> {item.toString()}</div>)}
+      {/* <Header /> */}
+      {items.map(item => {
+        return (
+          <div>
+            <p>Países: {item.country}</p>
+            <p>Total de casos: {item.cases.total}</p>
+            <p>Novos casos: {item.cases.new}</p>
+            <p>Total de óbitos: {item.deaths.total}</p>
+          </div>
+        )
+      }
+      )}
+
     </div>
   )
 }
