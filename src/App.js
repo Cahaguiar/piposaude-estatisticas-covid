@@ -32,7 +32,7 @@ export default function CountryStatistics(props) {
       {/* <Header /> */}
       {items.map(item => {
         return (
-          <div>
+          <div key={item.country}>
             <p>Países: {item.country}</p>
             <p>Total de casos: {item.cases.total}</p>
             <p>Novos casos: {item.cases.new}</p>
