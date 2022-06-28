@@ -1,4 +1,4 @@
-import Header from "./components/header/header";
+import Header from "./components/header/header.jsx";
 
 function App() {
 
@@ -19,7 +19,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Hello World</h1>
     </div>
   );
 }
