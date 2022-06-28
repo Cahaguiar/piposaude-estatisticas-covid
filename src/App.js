@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { getData } from './services';
-//import Header from "./components/header/header";
+import Header from "./components/header/header.jsx";
 
 export default function CountryStatistics(props) { 
   const [items, setItems] = useState([]);
@@ -16,7 +16,7 @@ export default function CountryStatistics(props) {
   }, [])
   return (
     <div className="App">  
-      {/* <Header /> */}
+      <Header />
       <table>
         <thead>
           <tr>

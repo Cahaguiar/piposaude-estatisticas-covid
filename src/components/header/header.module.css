@@ -1,0 +1,130 @@
+@import '../../style.css';
+
+header,
+.headerSection,
+.menuList,
+.linkButtons {
+  display: flex;
+}
+
+header {
+  width: 100%;
+  justify-content: center;
+  position: fixed;
+}
+
+.headerSection {
+  height: 4.5rem;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 152px;
+}
+
+.headerSection button {
+  background: none;
+  border: none;
+}
+
+.iconMenuHamburguer {
+  font-size: 2rem;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 4.5rem;
+  height: 16rem;
+  color: #333;
+  /* display: none; */
+}
+
+.menuList {
+  list-style-type: none;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto auto;
+  height: 50%;
+  align-items: center;
+}
+
+.menuList li,
+.listOfLinkButtons li {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 32px;
+  align-items: center;
+  display: flex;
+}
+
+.menu ul .menuItems {
+  background-color: transparent;
+  margin: 0 4px;
+}
+
+.menu ul .menuItems:hover,
+.pipoPlatform:hover {
+  background-color: #e7ecfd;
+}
+
+.arrowIcon {
+  width: 22px;
+}
+
+.menuList li ul {
+  display:none;
+}
+
+.listOfLinkButtons {
+  display: grid;
+  height: 45%;
+  align-items: center;
+}
+
+.listOfLinkButtons li {
+  width: 11rem;
+}
+
+.pipoPlatform {
+  color: #1139b0;
+  font-weight: 600;
+}
+
+.quotesLink {
+  background-color: #1139b0;
+  font-family: Poppins,sans-serif;
+  color: #fff;
+  margin: 0 16px;
+}
+
+.quotesLink:hover {
+  background-color: #0b2675;
+}
+
+/* para desktop */
+/* @media only screen and (min-width:768px)  {
+  .menu {
+    display: flex;
+    width: 83%;
+    justify-content: space-between;
+  }
+  .iconMenuHamburguer {
+    display: none;
+  }
+  .menuList {
+    list-style-type: none;
+    justify-content: space-between;
+    display: flex;
+    height: 50%;
+    align-items: center;
+  }
+  .listOfLinkButtons {
+    display: flex;
+    height: 45%;
+    align-items: center;
+  }
+} */
