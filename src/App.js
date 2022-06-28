@@ -14,10 +14,10 @@ export default function CountryStatistics(props) {
       return response
       }))
     .then((response) => {
-       const resposta= response.response;
+      const resposta= response.response;
       setItems(resposta)
     })
-     .catch(err => console.error(err));
+    .catch(err => console.error(err));
   }, [])
   return (
     <div className="App">  
@@ -33,7 +33,6 @@ export default function CountryStatistics(props) {
         )
       }
       )}
-
     </div>
   )
 }
