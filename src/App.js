@@ -1,26 +1,39 @@
+import React, {useState, useEffect} from 'react';
+import { getData } from './services';
 import Header from "./components/header/header.jsx";
 
-function App() {
 
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': 'df2194d5dbmsh522022e5d948b99p19cb42jsn5b1bbe778356',
-      'X-RapidAPI-Host': 'covid-193.p.rapidapi.com'
-    }
-  };
-  
-  fetch('https://covid-193.p.rapidapi.com/history?country=usa&day=2020-06-02', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
+export default function CountryStatistics(props) { 
+  const [items, setItems] = useState([]);
+
+  useEffect(function() {
+    getData()
+    .then((response => response.json()))
+    .then((response => {
+      console.log(response)
+      return response
+      }))
+    .then((response) => {
+      const resposta= response.response;
+      setItems(resposta)
+    })
     .catch(err => console.error(err));
-
-
+  }, [])
   return (
-    <div className="App">
+    <div className="App">  
       <Header />
-    </div>
-  );
+      {items.map(item => {
+        return (
+          <div key={item.country}>
+            <p>Países: {item.country}</p>
+            <p>Total de casos: {item.cases.total}</p>
+            <p>Novos casos: {item.cases.new}</p>
+            <p>Total de óbitos: {item.deaths.total}</p>
+          </div>
+        )
+      }
+      
+      )}
+      </div>
+  )
 }
-
-export default App;
