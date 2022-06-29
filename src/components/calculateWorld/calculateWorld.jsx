@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getData } from '../services';
+import { getData } from '../../services';
 
 const CalculateWorld = () => {
   const [totalData, setTotalData] = useState({
