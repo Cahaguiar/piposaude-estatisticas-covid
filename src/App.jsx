@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { getDataBrazil, getDataByDate, getData } from "./services";
 import Header from "./components/header/header.jsx";
+import styles from "./style.css";
+import DataBrazilState from "./components/DataBrazilState/index.jsx";
 import CalculateWorld from "./components/calculateWorld/calculateWorld.jsx";
-import "./style.css";
+
+
 export default function CountryStatistics(props) {
+
   const [items, setItems] = useState([]);
   const [itemsBrazil, setItemsBrazil] = useState([]);
 
@@ -16,6 +20,7 @@ export default function CountryStatistics(props) {
       })
       .catch((err) => console.error(err));
   }, []);
+
 
   useEffect(function () {
     getDataBrazil()
@@ -68,6 +73,7 @@ export default function CountryStatistics(props) {
       <main className={'App main'}>
         <h1><p>COVID19</p>Painel Coronavírus</h1>
         <CalculateWorld />
+        
         <section className={'tabelaMundial'}>
           <h3>Síntese de casos, óbitos e novos casos do Covid-19 no mundo</h3>
           <table className={'tabelaMundial-infos'}>
@@ -126,6 +132,7 @@ export default function CountryStatistics(props) {
             </tbody>
           </table>
         </section>
+        <DataBrazilState />
       </main>
     </>
   );
