@@ -1,0 +1,36 @@
+@import '../../style.css';
+
+.totalsSection {
+    background-color: #e7ecfd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0;
+    width: 100%;
+}
+
+.totalCases,
+.totalDeaths,
+.totalNewCases {
+    height: 8rem;
+    width: 13.5rem;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+}
+
+.totalCases {
+    background-color: #1139b0;
+    color: white;
+}
+
+.totalDeaths,
+.totalNewCases {
+    background-color: white;
+    color: #1139b0;
+}
+
+.totalValues {
+    font-size: 2rem;
+    font-weight: 600;
+}

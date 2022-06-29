@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { getDataBrazil, getDataByDate, getData } from "./services";
 import Header from "./components/header/header.jsx";
+import "./style.css";
+import DataBrazilState from "./components/DataBrazilState/index.jsx";
+import CalculateWorld from "./components/calculateWorld/calculateWorld.jsx";
+
 
 export default function CountryStatistics(props) {
+
   const [items, setItems] = useState([]);
   const [itemsBrazil, setItemsBrazil] = useState([]);
 
@@ -15,6 +20,7 @@ export default function CountryStatistics(props) {
       })
       .catch((err) => console.error(err));
   }, []);
+
 
   useEffect(function () {
     getDataBrazil()
@@ -56,70 +62,47 @@ export default function CountryStatistics(props) {
       acc.datetime = item.datetime;
       return acc;
     }, {});
+    console.log(dataInThisDay)
     return dataInThisDay;
   }
 
   return (
     <>
       <Header />
-      <main className="App data">
-        <section className="tabelaMundial">
-          <div>
-            <h3>Síntese de casos, óbitos e novos casos do Covid-19 no mundo</h3>
-            <table className="tabelaMundial-infos">
-              <thead>
-                <tr className="tabelaMundial-titulos">
-                  <th>Países</th>
-                  <th>Casos</th>
-                  <th>Novos Casos</th>
-                  <th>Óbitos</th>
-                </tr>
-              </thead>
-              <tbody>
-                {items.map((item) => {
-                  return (
-                    <tr key={item.country} className="tabelaMundial-paises">
-                      <td>{item.country}</td>
+      <main className={'App main'}>
+        <h1><p>COVID19</p>Painel Coronavírus</h1>
+        <CalculateWorld />
+        
+        <section className={'tabelaMundial'}>
+          <h3>Síntese de casos, óbitos e novos casos do Covid-19 no mundo</h3>
+          <table className={'tabelaMundial-infos'}>
+            <thead>
+              <tr className={'tabelaMundial-titulos'}>
+                <th>Países</th>
+                <th>Casos</th>
+                <th>Novos Casos</th>
+                <th>Óbitos</th>
+              </tr>
+              <hr />
+            </thead>
+            <tbody>
+              {items.map((item) => {
+                return (
+                  <>
+                    <tr key={item.country} className={'tabelaMundial-paises'}>
+                      <td className={'paises'}>{item.country}</td>
                       <td>{item.cases.total}</td>
                       <td>{item.cases.new}</td>
                       <td>{item.deaths.total}</td>
                     </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        </section>
-        <section className="data-Brazil">
-          <form>
-            <label for="dateInicio">Data início:</label>
-            <input type="date" id="dateInicio" name="date-inicio" />
-            <label for="dateInicio">Data final:</label>
-            <input type="date" id="dateInicio" name="date-inicio" />
-          </form>
-          <table>
-            <thead>
-              <tr>
-                <th>Estado</th>
-                <th>Número de Casos</th>
-                <th>Número de Óbitos</th>
-                <th>Número de Suspeitas</th>
-              </tr>
-            </thead>
-            <tbody>
-              {itemsBrazil.map((item) => {
-                return (
-                  <tr key={item.state}>
-                    <td> {item.state}</td>
-                    <td> {item.cases}</td>
-                    <td> {item.deaths}</td>
-                    <td> {item.suspects}</td>
-                  </tr>
+                    <hr />
+                  </>
                 );
               })}
             </tbody>
           </table>
         </section>
+        <DataBrazilState />
       </main>
     </>
   );
