@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getDataBrazil, getDataByDate, getData } from "./services";
 import Header from "./components/header/header.jsx";
-import './style.css';
-
+import CalculateWorld from "./components/calculateWorld/calculateWorld.jsx";
+import styles from "./style.css";
 export default function CountryStatistics(props) {
   const [items, setItems] = useState([]);
   const [itemsBrazil, setItemsBrazil] = useState([]);
@@ -66,6 +66,7 @@ export default function CountryStatistics(props) {
     <>
       <Header />
       <main className={'App main'}>
+        <CalculateWorld />
         <section className={'tabelaMundial'}>
           <h3>Síntese de casos, óbitos e novos casos do Covid-19 no mundo</h3>
           <table className={'tabelaMundial-infos'}>
