@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getData } from "./services";
 import { getDataBrazil } from "./services";
 import Header from "./components/header/header.jsx";
+import CalculateWorld from "./components/calculateWorld/calculateWorld.jsx";
 import styles from "./style.css";
 export default function CountryStatistics(props) {
   const [items, setItems] = useState([]);
@@ -26,6 +27,7 @@ export default function CountryStatistics(props) {
   return (
     <>
       <Header />
+      <CalculateWorld />
       <div className={`App data ${styles.data}`}>
         <table>
           <thead>
