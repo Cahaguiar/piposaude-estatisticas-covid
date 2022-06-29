@@ -1,83 +1,43 @@
-import React, { useState, useEffect } from "react";
-import { getData } from "./services";
-import { getDataBrazil } from "./services";
+import React, {useState, useEffect} from 'react';
+import { getData } from './services';
 import Header from "./components/header/header.jsx";
+import styles from '../src/style.css';
 
-export default function CountryStatistics(props) {
+
+export default function CountryStatistics(props) { 
   const [items, setItems] = useState([]);
-  const [itemsBrazil, setItemsBrazil] = useState([]);
 
-  useEffect(function () {
+  useEffect(function() {
     getData()
-      .then((response) => response.json())
-      .then((response) => {
-        const resposta = response.response;
-        setItems(resposta);
-      })
-      .catch((err) => console.error(err));
-  }, []);
-
-  useEffect(function () {
-    getDataBrazil()
-      .then((response) => response.json())
-
-      .then((response) => {
-        setItemsBrazil(response.data);
-      })
-      .catch((err) => console.error(err));
-  }, []);
-
+    .then((response => response.json()))
+    .then((response => {
+      console.log(response)
+      return response
+      }))
+    .then((response) => {
+      const resposta= response.response;
+      setItems(resposta)
+    })
+    .catch(err => console.error(err));
+  }, [])
   return (
     <>
-      <div className="App">
-        <Header />
-        <table>
-          <thead>
-            <tr>
-              <th>Países</th>
-              <th>Total de Casos</th>
-              <th>Novos Casos</th>
-              <th>Total de Óbitos</th>
-            </tr>
-          </thead>
-          <tbody>
-            {items.map((item) => {
-              return (
-                <tr key={item.country}>
-                  <td>{item.country}</td>
-                  <td>{item.cases.total}</td>
-                  <td>{item.cases.new}</td>
-                  <td>{item.deaths.total}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-      <div className="data-Brazil">
-        <table>
-          <thead>
-            <tr>
-              <th>Estado</th>
-              <th>Número de Casos</th>
-              <th>Número de Óbitos</th>
-              <th>Número de Suspeitas</th>
-            </tr>
-          </thead>
-          <tbody>
-            {itemsBrazil.map((item) => {
-              return (
-                <tr key={item.state}>
-                  <td> {item.state}</td>
-                  <td> {item.cases}</td>
-                  <td> {item.deaths}</td>
-                  <td> {item.suspects}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+      <Header />
+      <main>
+        <div className={`App data ${styles.data}`}>  
+          {items.map(item => {
+            return (
+              <div key={item.country}>
+                <p>Países: {item.country}</p>
+                <p>Total de casos: {item.cases.total}</p>
+                <p>Novos casos: {item.cases.new}</p>
+                <p>Total de óbitos: {item.deaths.total}</p>
+              </div>
+            )
+          }
+          )}
+        </div>
+      </main>
     </>
-  );
+  )
 }
