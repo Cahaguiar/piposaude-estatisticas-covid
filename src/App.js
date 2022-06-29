@@ -27,9 +27,9 @@ export default function CountryStatistics(props) {
           </tr>
         </thead>
         <tbody>
-        {items.map(item => {
+            {items.map((item) => {
           return (
-          <tr>
+                <tr key={item.country}>
             <td>{item.country}</td>
             <td>{item.cases.total}</td>
             <td>{item.cases.new}</td>
