@@ -28,7 +28,7 @@ const DataBrazilState = () => {
   }
 
   return (
-    <>
+    <section className={'tabelaBrasil'}>
       <select className="select-state" onChange={handleChange}>
         <option value="">Selecione um Estado</option>
         {itemsBrazil.map((item) => {
@@ -38,32 +38,34 @@ const DataBrazilState = () => {
         }
         )}
       </select>
-      
-      <div className="data-Brazil">
-        <table>
-          <thead>
-            <tr>
-              <th>Estado</th>
-              <th>Número de Casos</th>
-              <th>Número de Óbitos</th>
-              <th>Número de Suspeitas</th>
-            </tr>
-          </thead>
-          <tbody>
-            {itemsSelect.map((item) => {
-              return (
-                <tr key={item.state}>
-                  <td> {item.state}</td>
+      <h3>Síntese de casos, óbitos e suspeitas do Covid-19 no Brasil</h3>
+      <table className={'tabelaBrasil-infos'}>
+        <thead>
+          <tr className={'tabelaBrasil-titulos'}>
+            <th>Estado</th>
+            <th>Casos</th>
+            <th>Óbitos</th>
+            <th>Suspeitas</th>
+          </tr>
+          <hr />
+        </thead>
+        <tbody>
+          {itemsSelect.map((item) => {
+            return (
+              <>
+                <tr key={item.state} className={'tabelaBrasil-estados'}>
+                  <td className={'paises'}> {item.state}</td>
                   <td> {item.cases}</td>
                   <td> {item.deaths}</td>
                   <td> {item.suspects}</td>
                 </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-    </>
+                <hr />
+              </>
+            );
+          })}
+        </tbody>
+      </table>
+    </section>
   )    
 } 
 export default DataBrazilState;
