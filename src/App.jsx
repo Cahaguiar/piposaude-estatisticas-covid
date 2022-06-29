@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { getData } from "./services";
-import { getDataBrazil } from "./services";
+// import { getDataBrazil } from "./services";
 import Header from "./components/header/header.jsx";
 import styles from "./style.css";
+import DataBrazilState from "./components/DataBrazilState";
+
 export default function CountryStatistics(props) {
+
   const [items, setItems] = useState([]);
-  const [itemsBrazil, setItemsBrazil] = useState([]);
+  // const [itemsBrazil, setItemsBrazil] = useState([]);
+  // const [itemsSelect, setItemsSelect] = useState([])
+
   useEffect(function () {
     getData()
       .then((response) => response.json())
@@ -15,14 +20,30 @@ export default function CountryStatistics(props) {
       })
       .catch((err) => console.error(err));
   }, []);
-  useEffect(function () {
-    getDataBrazil()
-      .then((response) => response.json())
-      .then((response) => {
-        setItemsBrazil(response.data);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+
+  // useEffect(function () {
+  //   getDataBrazil()
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       setItemsBrazil(response.data);
+  //       setItemsSelect(response.data);
+      
+  //     })
+  //     .catch((err) => console.error(err));
+  // }, []);
+
+  // const filterStates = (data, uf) => {
+  //   if (!uf) {
+  //     return itemsBrazil
+  //   }
+  //   return data.filter((item) => item.uf === uf)
+  // }
+
+  // const handleChange = (e) => {
+  //   setItemsSelect(filterStates(itemsBrazil, e.target.value))
+    
+  // }
+  
   return (
     <>
       <Header />
@@ -50,6 +71,20 @@ export default function CountryStatistics(props) {
           </tbody>
         </table>
       </div>
+
+      <DataBrazilState />
+      
+      {/* <label>Selecione um Estado:</label>
+      <select className="select-state" onChange={handleChange}>
+        <option value="">Selecione um Estado</option>
+        {itemsBrazil.map((item) => {
+          return (
+            <option value={item.uf}> {item.state}</option>
+          )
+        }
+        )}
+      </select>
+      
       <div className="data-Brazil">
         <table>
           <thead>
@@ -61,7 +96,7 @@ export default function CountryStatistics(props) {
             </tr>
           </thead>
           <tbody>
-            {itemsBrazil.map((item) => {
+            {itemsSelect.map((item) => {
               return (
                 <tr key={item.state}>
                   <td> {item.state}</td>
@@ -73,7 +108,7 @@ export default function CountryStatistics(props) {
             })}
           </tbody>
         </table>
-      </div>
+      </div> */}
     </>
   );
 }
