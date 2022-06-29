@@ -80,4 +80,5 @@ export default function CountryStatistics(props) {
       </div>
     </>
   );
+  
 }

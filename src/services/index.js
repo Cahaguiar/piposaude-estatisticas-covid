@@ -18,3 +18,4 @@ export const getDataBrazil = () => {
 export const getDataByDate = (date) => {
   return fetch(`https://covid19-brazil-api.now.sh/api/report/v1/brazil/${date}`)
 };
+
