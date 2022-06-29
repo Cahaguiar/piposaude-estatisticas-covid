@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getDataBrazil, getDataByDate, getData } from "./services";
 import Header from "./components/header/header.jsx";
 import styles from "./style.css";
-import DataBrazilState from "./components/header/Select/index.jsx";
+import DataBrazilState from "./components/DataBrazilState/index.jsx";
 import CalculateWorld from "./components/calculateWorld/calculateWorld.jsx";
 
 
@@ -73,7 +73,7 @@ export default function CountryStatistics(props) {
       <main className={'App main'}>
         <h1><p>COVID19</p>Painel Coronavírus</h1>
         <CalculateWorld />
-        <DataBrazilState />
+        
         <section className={'tabelaMundial'}>
           <h3>Síntese de casos, óbitos e novos casos do Covid-19 no mundo</h3>
           <table className={'tabelaMundial-infos'}>
@@ -103,36 +103,7 @@ export default function CountryStatistics(props) {
             </tbody>
           </table>
         </section>
-        <section className="data-Brazil">
-          <form>
-            <label for="dateInicio">Data início:</label>
-            <input type="date" id="dateInicio" name="date-inicio" />
-            <label for="dateInicio">Data final:</label>
-            <input type="date" id="dateInicio" name="date-inicio" />
-          </form>
-          <table>
-            <thead>
-              <tr>
-                <th>Estado</th>
-                <th>Número de Casos</th>
-                <th>Número de Óbitos</th>
-                <th>Número de Suspeitas</th>
-              </tr>
-            </thead>
-            <tbody>
-              {itemsBrazil.map((item) => {
-                return (
-                  <tr key={item.state}>
-                    <td> {item.state}</td>
-                    <td> {item.cases}</td>
-                    <td> {item.deaths}</td>
-                    <td> {item.suspects}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </section>
+        <DataBrazilState />
       </main>
     </>
   );

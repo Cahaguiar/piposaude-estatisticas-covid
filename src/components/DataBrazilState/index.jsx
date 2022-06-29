@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getDataBrazil } from "../../../services";
+import { getDataBrazil } from "../../services";
 
 const DataBrazilState = () => {
   const [itemsBrazil, setItemsBrazil] = useState([]);
@@ -29,7 +29,6 @@ const DataBrazilState = () => {
 
   return (
     <>
-      <label>Selecione um Estado:</label>
       <select className="select-state" onChange={handleChange}>
         <option value="">Selecione um Estado</option>
         {itemsBrazil.map((item) => {
