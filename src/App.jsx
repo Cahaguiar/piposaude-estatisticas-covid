@@ -97,31 +97,30 @@ export default function CountryStatistics(props) {
             </tbody>
           </table>
         </section>
-        <section className="data-Brazil">
-          <form>
-            <label for="dateInicio">Data início:</label>
-            <input type="date" id="dateInicio" name="date-inicio" />
-            <label for="dateInicio">Data final:</label>
-            <input type="date" id="dateInicio" name="date-inicio" />
-          </form>
-          <table>
+        <section className={'tabelaBrasil'}>
+          <h3>Síntese de casos, óbitos e suspeitas do Covid-19 no Brasil</h3>
+          <table className={'tabelaBrasil-infos'}>
             <thead>
-              <tr>
+              <tr className={'tabelaBrasil-titulos'}>
                 <th>Estado</th>
-                <th>Número de Casos</th>
-                <th>Número de Óbitos</th>
-                <th>Número de Suspeitas</th>
+                <th>Casos</th>
+                <th>Óbitos</th>
+                <th>Suspeitas</th>
               </tr>
+              <hr />
             </thead>
             <tbody>
               {itemsBrazil.map((item) => {
                 return (
-                  <tr key={item.state}>
-                    <td> {item.state}</td>
-                    <td> {item.cases}</td>
-                    <td> {item.deaths}</td>
-                    <td> {item.suspects}</td>
-                  </tr>
+                  <>
+                    <tr key={item.state} className={'tabelaBrasil-estados'}>
+                      <td className={'paises'}> {item.state}</td>
+                      <td> {item.cases}</td>
+                      <td> {item.deaths}</td>
+                      <td> {item.suspects}</td>
+                    </tr>
+                    <hr />
+                  </>
                 );
               })}
             </tbody>

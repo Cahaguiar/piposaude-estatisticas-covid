@@ -33,21 +33,25 @@
   font-size: 1rem;
 }
 
-.tabelaMundial-titulos th {
+.tabelaMundial-titulos th,
+.tabelaBrasil-titulos th {
   padding: 0.5rem 0;
 }
 
-.tabelaMundial h3 {
+.tabelaMundial h3,
+.tabelaBrasil h3 {
   background-color: #FFD9E9;
   padding: 10px;
 }
 
-.tabelaMundial-infos {
+.tabelaMundial-infos,
+.tabelaBrasil-infos {
   width: 90%;
   margin: 5px auto;
 }
 
-.tabelaMundial-infos thead {
+.tabelaMundial-infos thead,
+.tabelaBrasil-infos thead {
   border: 2px solid #FFD9E9;
 }
 thead hr {
@@ -55,7 +59,8 @@ thead hr {
   width: 274%;
 }
 
-.tabelaMundial-paises {
+.tabelaMundial-paises,
+.tabelaBrasil-estados {
   height: 3rem;
   text-align: center;
 }
