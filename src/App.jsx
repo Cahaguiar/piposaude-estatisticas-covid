@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { getData } from './services';
 import Header from "./components/header/header.jsx";
+import styles from '../src/style.css';
 
 
 export default function CountryStatistics(props) { 
@@ -20,20 +21,23 @@ export default function CountryStatistics(props) {
     .catch(err => console.error(err));
   }, [])
   return (
-    <div className="App">  
+    <>
       <Header />
-      {items.map(item => {
-        return (
-          <div key={item.country}>
-            <p>Países: {item.country}</p>
-            <p>Total de casos: {item.cases.total}</p>
-            <p>Novos casos: {item.cases.new}</p>
-            <p>Total de óbitos: {item.deaths.total}</p>
-          </div>
-        )
-      }
-      
-      )}
-      </div>
+      <main>
+        <div className={`App data ${styles.data}`}>  
+          {items.map(item => {
+            return (
+              <div key={item.country}>
+                <p>Países: {item.country}</p>
+                <p>Total de casos: {item.cases.total}</p>
+                <p>Novos casos: {item.cases.new}</p>
+                <p>Total de óbitos: {item.deaths.total}</p>
+              </div>
+            )
+          }
+          )}
+        </div>
+      </main>
+    </>
   )
 }

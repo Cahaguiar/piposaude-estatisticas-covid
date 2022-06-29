@@ -2,16 +2,21 @@ import styles from './header.module.css'
 import logoAzul from '../../img/logo-azul.png';
 import setaCinza from '../../img/seta-cinza.png';
 import { BiMenu } from 'react-icons/bi';
+import { useState } from 'react';
 
 const Header = () => {
+  const [active, setMode] = useState(false);
+  const ToggleMode = () => {
+    setMode(!active);
+  }
   return (
     <header>
       <section className={styles.headerSection}>
         <img src={logoAzul} alt='Logo Pipo Saúde' className={styles.logo} />
-        <button>
+        <section onClick={ToggleMode}>
           <BiMenu className={styles.iconMenuHamburguer} />
-        </button>
-        <nav className={styles.menu}>
+        </section>
+        <nav className={`${styles.menu} ${active ? styles.menuOpen : styles.menuClose}`}>
           <ul className={styles.menuList}>
             <li className={styles.menuItems}>
               <a href='#'>Sobre nós</a>

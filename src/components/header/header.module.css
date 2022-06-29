@@ -11,6 +11,8 @@ header {
   width: 100%;
   justify-content: center;
   position: fixed;
+  z-index: 1;
+  background-color: white;
 }
 
 .headerSection {
@@ -40,7 +42,15 @@ header {
   top: 4.5rem;
   height: 16rem;
   color: #333;
-  /* display: none; */
+  background-color: white;
+}
+
+.menuOpen {
+  display: block;
+}
+
+.menuClose {
+  display: none;
 }
 
 .menuList {
