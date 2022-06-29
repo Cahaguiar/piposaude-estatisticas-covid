@@ -15,6 +15,7 @@ export const getDataBrazil = () => {
   });
 };
 
-export const getDataByDate = (date) => {
-  return fetch(`https://covid19-brazil-api.now.sh/api/report/v1/brazil/${date}`)
-};
+export function getDataByDate(date) {
+  const url = `https://covid19-brazil-api.vercel.app/api/report/v1/brazil/${date}`;
+  return fetch(url).then((response) => response.json());
+}

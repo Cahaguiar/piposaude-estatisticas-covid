@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { getData } from "./services";
-import { getDataBrazil } from "./services";
+import { getDataBrazil, getDataByDate, getData } from "./services";
 import Header from "./components/header/header.jsx";
 
 export default function CountryStatistics(props) {
   const [items, setItems] = useState([]);
   const [itemsBrazil, setItemsBrazil] = useState([]);
-  const numDays = 40;
-  const today = new Date();
 
   useEffect(function () {
     getData()
@@ -28,32 +25,27 @@ export default function CountryStatistics(props) {
       .catch((err) => console.error(err));
   }, []);
 
-  const reqs = [];
-  for (let i = 0; i < numDays; i++) {
-    const currentDate = new Date(today);
-    currentDate.setDate(currentDate.getDate() - i);
-    const day = currentDate.getDate();
-    const month = currentDate.getMonth() + 1;
-    const year = currentDate.getFullYear();
+  function getDateByTimeRange(numDays) {
+    const today = new Date();
+    const reqs = [];
+    for (let i = 0; i < numDays; i++) {
+      const currentDate = new Date(today);
+      currentDate.setDate(currentDate.getDate() - i);
+      const day = currentDate.getDate();
+      const month = currentDate.getMonth() + 1;
+      const year = currentDate.getFullYear();
+      const date =
+        year.toString() +
+        month.toString().padStart(2, "0") +
+        day.toString().padStart(2, "0");
+      const req = getDataByDate(date);
+      reqs.push(req);
+    }
 
-    const date =
-      year.toString() +
-      month.toString().padStart(2, "0") +
-      day.toString().padStart(2, "0");
-
-    const req = getDataByDate(date);
-    reqs.push(req);
+    Promise.all(reqs).then((values) => {
+      const dataByDate = values.map((item) => processData(item));
+    });
   }
-
-  function getDataByDate(date) {
-    const url = `https://covid19-brazil-api.vercel.app/api/report/v1/brazil/${date}`;
-    return fetch(url).then((response) => response.json());
-  }
-
-  Promise.all(reqs).then((values) => {
-    const dataByDate = values.map((item) => processData(item));
-    console.log(dataByDate);
-  });
 
   function processData({ data }) {
     const dataInThisDay = data.reduce((acc, item) => {
@@ -70,13 +62,13 @@ export default function CountryStatistics(props) {
   return (
     <>
       <Header />
-      <main className='App data'>
-        <section className='tabelaMundial'>
+      <main className="App data">
+        <section className="tabelaMundial">
           <div>
             <h3>Síntese de casos, óbitos e novos casos do Covid-19 no mundo</h3>
-            <table className='tabelaMundial-infos'>
+            <table className="tabelaMundial-infos">
               <thead>
-                <tr className='tabelaMundial-titulos'>
+                <tr className="tabelaMundial-titulos">
                   <th>Países</th>
                   <th>Casos</th>
                   <th>Novos Casos</th>
@@ -86,7 +78,7 @@ export default function CountryStatistics(props) {
               <tbody>
                 {items.map((item) => {
                   return (
-                    <tr key={item.country} className='tabelaMundial-paises'>
+                    <tr key={item.country} className="tabelaMundial-paises">
                       <td>{item.country}</td>
                       <td>{item.cases.total}</td>
                       <td>{item.cases.new}</td>
