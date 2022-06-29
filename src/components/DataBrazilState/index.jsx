@@ -4,7 +4,6 @@ import { getDataBrazil } from "../../services";
 const DataBrazilState = () => {
   const [itemsBrazil, setItemsBrazil] = useState([]);
   const [itemsSelect, setItemsSelect] = useState([])
-  
 
   useEffect(function () {
     getDataBrazil()
@@ -26,7 +25,6 @@ const DataBrazilState = () => {
 
   const handleChange = (e) => {
     setItemsSelect(filterStates(itemsBrazil, e.target.value))
-    
   }
 
   return (
