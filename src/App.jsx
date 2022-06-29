@@ -103,35 +103,6 @@ export default function CountryStatistics(props) {
             </tbody>
           </table>
         </section>
-        <section className={'tabelaBrasil'}>
-          <h3>Síntese de casos, óbitos e suspeitas do Covid-19 no Brasil</h3>
-          <table className={'tabelaBrasil-infos'}>
-            <thead>
-              <tr className={'tabelaBrasil-titulos'}>
-                <th>Estado</th>
-                <th>Casos</th>
-                <th>Óbitos</th>
-                <th>Suspeitas</th>
-              </tr>
-              <hr />
-            </thead>
-            <tbody>
-              {itemsBrazil.map((item) => {
-                return (
-                  <>
-                    <tr key={item.state} className={'tabelaBrasil-estados'}>
-                      <td className={'paises'}> {item.state}</td>
-                      <td> {item.cases}</td>
-                      <td> {item.deaths}</td>
-                      <td> {item.suspects}</td>
-                    </tr>
-                    <hr />
-                  </>
-                );
-              })}
-            </tbody>
-          </table>
-        </section>
         <DataBrazilState />
       </main>
     </>
