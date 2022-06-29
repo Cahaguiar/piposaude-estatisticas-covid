@@ -13,4 +13,16 @@
 .data {
   padding-top: 6rem;
   z-index: -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabelaMundial {
+  background-color: #1139b0;
+  /* width: 90%; */
+}
+
+.tabelaMundial-titulos th {
+  width: 4rem;
 }
