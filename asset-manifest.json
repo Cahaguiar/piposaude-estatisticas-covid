@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/piposaude-estatisticas-covid/static/css/main.d32fedf5.css",
-    "main.js": "/piposaude-estatisticas-covid/static/js/main.018df139.js",
+    "main.css": "/piposaude-estatisticas-covid/static/css/main.84c7e172.css",
+    "main.js": "/piposaude-estatisticas-covid/static/js/main.dae33d43.js",
     "static/media/logo-azul.png": "/piposaude-estatisticas-covid/static/media/logo-azul.8be7981e57f3391adcdd.png",
     "index.html": "/piposaude-estatisticas-covid/index.html",
-    "main.d32fedf5.css.map": "/piposaude-estatisticas-covid/static/css/main.d32fedf5.css.map",
-    "main.018df139.js.map": "/piposaude-estatisticas-covid/static/js/main.018df139.js.map"
+    "main.84c7e172.css.map": "/piposaude-estatisticas-covid/static/css/main.84c7e172.css.map",
+    "main.dae33d43.js.map": "/piposaude-estatisticas-covid/static/js/main.dae33d43.js.map"
   },
   "entrypoints": [
-    "static/css/main.d32fedf5.css",
-    "static/js/main.018df139.js"
+    "static/css/main.84c7e172.css",
+    "static/js/main.dae33d43.js"
   ]
 }
