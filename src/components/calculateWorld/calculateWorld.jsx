@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getData } from '../../services';
+import style from '../calculateWorld/calculateWorld.module.css';
 
 const CalculateWorld = () => {
   const [totalData, setTotalData] = useState({
@@ -13,7 +14,7 @@ const CalculateWorld = () => {
       acc.preDeaths = acc.preDeaths + (item.deaths.total || 0);
       const newCases = item.cases.new ? parseInt(item.cases.new.replace('+', '')) : 0
       acc.preNewCases = acc.preNewCases + newCases;
-      console.log(newCases);
+      // console.log(newCases);
       acc.preCases = acc.preCases + (item.cases.total || 0);
       return acc
     }, {
@@ -29,18 +30,27 @@ const CalculateWorld = () => {
       .then((response => response.json()))
       .then((response) => {
         const answer = response.response;
-        console.log(answer)
+        // console.log(answer)
         calculateTotalData(answer)
       })
       .catch(err => console.error(err));
 
   }, [])
   return (
-    <div className="container-totals-world" key="container-totals-world">
-      <p>Total de casos no mundo: {totalData.preCases.toLocaleString()}</p>
-      <p>Total de mortes no mundo: {totalData.preDeaths.toLocaleString()}</p>
-      <p>Total de novos casos no mundo: {totalData.preNewCases.toLocaleString()}</p>
-    </div>
+    <section className={style.totalsSection} key="container-totals-world">
+      <div className={style.totalCases}>
+        <p>Total de <br /> casos no mundo</p>
+        <p className={style.totalValues}>{totalData.preCases.toLocaleString()}</p>
+      </div>
+      <div className={style.totalDeaths}>
+        <p>Total de <br /> mortes no mundo</p>
+        <p className={style.totalValues}>{totalData.preDeaths.toLocaleString()}</p>
+      </div>
+      <div className={style.totalNewCases}>
+        <p>Total de <br /> novos casos no mundo</p>
+        <p className={style.totalValues}>{totalData.preNewCases.toLocaleString()}</p>
+      </div>
+    </section>
   )
 };
 

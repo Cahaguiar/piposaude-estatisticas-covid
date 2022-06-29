@@ -19,13 +19,22 @@
   color: #333;
 }
 
-.tabelaMundial-titulos th {
-  /* width: 4rem; */
-  padding: 0.5rem 0;
+.main h1 {
+  margin-bottom: 1rem;
 }
 
-.tabelaMundial {
-  border: 2px solid #FF75AF;
+.main h1 {
+  align-self: flex-start;
+  margin-left: 1.5rem;
+}
+
+.main h1 p {
+  color: #1139b0;
+  font-size: 1rem;
+}
+
+.tabelaMundial-titulos th {
+  padding: 0.5rem 0;
 }
 
 .tabelaMundial h3 {
