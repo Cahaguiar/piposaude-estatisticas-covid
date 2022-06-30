@@ -10,7 +10,74 @@
   color: currentColor;
 }
 
-.data {
-  padding-top: 6rem;
+.main {
+  padding-top: 5rem;
   z-index: -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+.main h1 {
+  margin-bottom: 1rem;
+}
+
+.main h1 {
+  align-self: flex-start;
+  margin-left: 1.5rem;
+}
+
+.main h1 p {
+  color: #1139b0;
+  font-size: 1rem;
+}
+
+.tabelaMundial-titulos th,
+.tabelaBrasil-titulos th {
+  padding: 0.5rem 0;
+}
+
+.tabelaMundial h3,
+.tabelaBrasil h3 {
+  background-color: #FFD9E9;
+  padding: 10px;
+}
+
+.containerSelect {
+  margin: 1rem 0;
+  display: flex;
+  color: #1139b0;
+  font-weight: 600;
+  justify-content: space-evenly;
+}
+
+.tabelaMundial-infos,
+.tabelaBrasil-infos {
+  width: 90%;
+  margin: 5px auto;
+}
+
+.tabelaMundial-infos thead,
+.tabelaBrasil-infos thead {
+  border: 2px solid #FFD9E9;
+}
+thead hr {
+  border: 0.03rem solid #FF75AF;
+  width: 274%;
+}
+
+.tabelaMundial-paises,
+.tabelaBrasil-estados {
+  height: 3rem;
+  text-align: center;
+}
+
+tbody hr {
+  border: 0.03rem solid #FFD9E9;
+  width: 274%;
+}
+
+.paises {
+  text-align: start;
 }

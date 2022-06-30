@@ -116,25 +116,25 @@ header {
 }
 
 /* para desktop */
-/* @media only screen and (min-width:768px)  {
-  .menu {
-    display: flex;
-    width: 83%;
-    justify-content: space-between;
-  }
-  .iconMenuHamburguer {
+/* @media only screen and (min-width:768px)  { */
+  /* .menu { */
+    /* display: flex; */
+    /* width: 83%; */
+    /* justify-content: space-between; */
+  /* } */
+  /* .iconMenuHamburguer {
     display: none;
-  }
-  .menuList {
+  } */
+  /* .menuList {
     list-style-type: none;
     justify-content: space-between;
     display: flex;
     height: 50%;
     align-items: center;
-  }
-  .listOfLinkButtons {
+  } */
+  /* .listOfLinkButtons {
     display: flex;
     height: 45%;
     align-items: center;
-  }
-} */
+  } */
+/* } */
