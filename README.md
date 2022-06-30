@@ -15,7 +15,7 @@
 
 ## 1. Pipo Saúde
 
-![LOGO](.src/img/logo-azul.png)
+![LOGO](./src/img/logo-azul.png)
 
 A **Pipo Saúde** é uma corretora de benefícios de saúde que apoia o RH e oferece uma experiência incrível aos colaboradores, otimizando a relação das empresas na compra e gestão de benefícios.
 
@@ -62,8 +62,8 @@ A estrategia seguida para definir os requisitos e a priorização da implementa�
 
 Para criação dos Protótipos desenvolvidos usamos as ferramentas Adobe Illustrator e Adobe Photoshop.
 
-![Protótipo-alta-fidelidade-mobile](.src/img/readme/prototipo-alta-fidelidade-mobile.jpg)
-![Protótipo-alta-fidelidade-web](.src/img/readme/prototipo-alta-fidelidade-web.jpg)
+![Protótipo-alta-fidelidade-mobile](./src/img/readme/prototipo-alta-fidelidade-mobile.jpg)
+![Protótipo-alta-fidelidade-web](./src/img/readme/prototipo-alta-fidelidade-web.jpg)
 
 ### 5.1 Paleta de Cores
 
