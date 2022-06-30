@@ -96,7 +96,7 @@ tbody hr {
   thead hr,
   tbody hr {
     width: 80%;
-    /* position: absolute; */
+    position: relative;
   }
   .containerSelect {
     justify-content: start;
