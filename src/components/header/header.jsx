@@ -13,8 +13,8 @@ const Header = () => {
     <header>
       <section className={styles.headerSection}>
         <img src={logoAzul} alt='Logo Pipo Saúde' className={styles.logo} />
-        <section onClick={ToggleMode}>
-          <BiMenu className={styles.iconMenuHamburguer} />
+        <section onClick={ToggleMode} onKeyPress={ToggleMode} className={styles.iconMenuHamburguer}>
+          <BiMenu tabIndex={"0"} role={"button"} aria-expanded="false" aria-label="menu"/>
         </section>
         <nav className={`${styles.menu} ${active ? styles.menuOpen : styles.menuClose}`}>
           <ul className={styles.menuList}>
@@ -50,7 +50,7 @@ const Header = () => {
           </ul>
           <ul className={styles.listOfLinkButtons}>
             <li className={styles.pipoPlatform}><a href='#'>Plataforma Pipo</a></li>
-            <li className={styles.quotesLink}><a className={styles.quoteLink}>Quero uma cotação</a></li>  
+            <li className={styles.quotesLink}><a role="button" tabindex="0" className={styles.quoteLink}>Quero uma cotação</a></li>  
           </ul>
         </nav>
       </section>

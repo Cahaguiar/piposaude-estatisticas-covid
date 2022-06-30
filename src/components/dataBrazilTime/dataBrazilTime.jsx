@@ -12,32 +12,35 @@ const DataBrazilTime = ({ data, handleChange }) => {
           <option value="42">6 semanas</option>
         </select>
       </div>
-      <table className={"tabelaBrasil-infos"}>
-        <thead>
-          <tr className={"tabelaBrasil-titulos"}>
-            <th>Data</th>
-            <th>Casos</th>
-            <th>Óbitos</th>
-            <th>Suspeitas</th>
-          </tr>
-          <hr />
-        </thead>
-        <tbody>
-          {data.map((item) => {
-            return (
-              <>
-                <tr key={item.state} className={"tabelaBrasil-estados"}>
-                  <td>{item.datetime}</td>
-                  <td>{item.cases}</td>
-                  <td>{item.deaths}</td>
-                  <td>{item.suspects}</td>
-                </tr>
-                <hr />
-              </>
-            );
-          })}
-        </tbody>
-      </table>
+      <div className={"scroll"}>
+        <table className={"tabelaBrasil-infos"}>
+          <thead>
+            <tr className={"tabelaBrasil-titulos"}>
+              <th>Data</th>
+              <th>Casos</th>
+              <th>Óbitos</th>
+              <th>Suspeitas</th>
+            </tr>
+            <hr />
+          </thead>
+          <tbody>
+            {data.map((item) => {
+              return (
+                <>
+                  <tr key={item.state} className={"tabelaBrasil-estados"}>
+                    <td>{item.datetime}</td>
+                    <td>{item.cases}</td>
+                    <td>{item.deaths}</td>
+                    <td>{item.suspects}</td>
+                  </tr>
+                  <hr />
+                </>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      
     </section>
   );
 };
