@@ -5,9 +5,10 @@ import "./style.css";
 import DataBrazilState from "./components/DataBrazilState/index.jsx";
 import CalculateWorld from "./components/calculateWorld/calculateWorld.jsx";
 import DataBrazilTime from "./components/dataBrazilTime/dataBrazilTime";
+import Footer from "./components/footer/footer";
 import { Line } from "react-chartjs-2";
 import { options, data } from "./components/dataBrazilTime/graphicTime";
-import { 
+import {
   Chart as ChartsJS,
   CategoryScale,
   LinearScale,
@@ -27,6 +28,7 @@ ChartsJS.register(
   Tooltip,
   Legend,
 )
+
 
 
 export default function CountryStatistics(props) {
@@ -55,34 +57,37 @@ export default function CountryStatistics(props) {
 
         <section className={'tabelaMundial'}>
           <h3>Síntese de casos, óbitos e novos casos do Covid-19 no mundo</h3>
-          <table className={'tabelaMundial-infos'}>
-            <thead>
-              <tr className={'tabelaMundial-titulos'}>
-                <th>Países</th>
-                <th>Casos</th>
-                <th>Novos Casos</th>
-                <th>Óbitos</th>
-              </tr>
-              <hr />
-            </thead>
-            <tbody>
-              {items.map((item) => {
-                return (
-                  <>
-                    <tr key={item.country} className={'tabelaMundial-paises'}>
-                      <td className={'paises'}>{item.country}</td>
-                      <td>{item.cases.total}</td>
-                      <td>{item.cases.new}</td>
-                      <td>{item.deaths.total}</td>
-                    </tr>
-                    <hr />
-                  </>
-                );
-              })}
-            </tbody>
-          </table>
+          <div className={'scroll'}>
+            <table className={'tabelaMundial-infos'}>
+              <thead>
+                <tr className={'tabelaMundial-titulos'}>
+                  <th>Países</th>
+                  <th>Casos</th>
+                  <th>Novos Casos</th>
+                  <th>Óbitos</th>
+                </tr>
+                <hr />
+              </thead>
+              <tbody>
+                {items.map((item) => {
+                  return (
+                    <>
+                      <tr key={item.country} className={'tabelaMundial-paises'}>
+                        <td className={'paises'}>{item.country}</td>
+                        <td>{item.cases.total}</td>
+                        <td>{item.cases.new}</td>
+                        <td>{item.deaths.total}</td>
+                      </tr>
+                      <hr />
+                    </>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
