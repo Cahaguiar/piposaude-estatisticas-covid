@@ -14,7 +14,6 @@ const CalculateWorld = () => {
       acc.preDeaths = acc.preDeaths + (item.deaths.total || 0);
       const newCases = item.cases.new ? parseInt(item.cases.new.replace('+', '')) : 0
       acc.preNewCases = acc.preNewCases + newCases;
-      // console.log(newCases);
       acc.preCases = acc.preCases + (item.cases.total || 0);
       return acc
     }, {
@@ -30,7 +29,6 @@ const CalculateWorld = () => {
       .then((response => response.json()))
       .then((response) => {
         const answer = response.response;
-        // console.log(answer)
         calculateTotalData(answer)
       })
       .catch(err => console.error(err));
@@ -43,7 +41,7 @@ const CalculateWorld = () => {
         <p className={style.totalValues}>{totalData.preCases.toLocaleString()}</p>
       </div>
       <div className={style.totalDeaths}>
-        <p>Total de <br /> mortes no mundo</p>
+        <p>Total de <br /> óbitos no mundo</p>
         <p className={style.totalValues}>{totalData.preDeaths.toLocaleString()}</p>
       </div>
       <div className={style.totalNewCases}>
