@@ -15,7 +15,7 @@
 
 ## 1. Pipo Saúde
 
-![LOGO](.src/img/logo-azul.png)
+![LOGO](./src/img/logo-azul.png)
 
 A **Pipo Saúde** é uma corretora de benefícios de saúde que apoia o RH e oferece uma experiência incrível aos colaboradores, otimizando a relação das empresas na compra e gestão de benefícios.
 
@@ -44,26 +44,26 @@ A estrategia seguida para definir os requisitos e a priorização da implementa�
 
 ## 4. Features do Produto Mínimo Viável (MVP)
 
-- [x] **Consumo de API com histórico de estatísticas da COVID por país**
-- [x] **Para a API mundo, foi desenvolvido filtro por País**
-- [x] **Para a API mundo, foi desenvolvido calculo agregado mostrando três estatísticas, número de óbitos, casos totais, novos casos**
-- [x] **Consumo de API com histórico de estatísticas da COVID do Brasil**
-- [x] **Para a API Brasil, foi desenvolvido filtro por Estado** 
-- [x] **Para a API Brasil, foi desenvolvido filtro por Periodo de 3 semanas e 6 semanas** 
-- [x] **Consumo de Biblioteca de gráficos da google**
-- [x] **Exibição dos dados dos Países em tabela com Casos, Novos Casos e Óbitos**
-- [x] **Exibição dos dados do Brasil em tabelas para filtro de estado e periodo**
-- [x] **Exibição dos dados do Brasil em grafico para Casos, Óbitos e Suspeitos**
-- [x] **Mobile-First**
-- [x] **Responsividade**
-- [x] **Deploy em hosting público - GitHub Pages**
+- [x] **Consumo de API com histórico de estatísticas da COVID por país.**
+- [x] **Para a API mundo, foi desenvolvido filtro por país.**
+- [x] **Para a API mundo, foi desenvolvido calculo agregado mostrando três estatísticas, número de óbitos, casos totais, novos casos.**
+- [x] **Consumo de API com histórico de estatísticas da COVID do Brasil.**
+- [x] **Para a API Brasil, foi desenvolvido filtro por estado.** 
+- [x] **Para a API Brasil, foi desenvolvido filtro por periodo de 3 semanas e 6 semanas.** 
+- [x] **Consumo de biblioteca de gráficos da Google.**
+- [x] **Exibição dos dados dos países em tabela com casos, novos casos e óbitos.**
+- [x] **Exibição dos dados do Brasil em tabelas para filtro de estado e periodo.**
+- [x] **Exibição dos dados do Brasil em grafico para casos, óbitos e suspeitos.**
+- [x] **Mobile-First.**
+- [x] **Responsividade.**
+- [x] **Deploy em hosting público - GitHub Pages.**
 
 ## 5. Protótipos
 
 Para criação dos Protótipos desenvolvidos usamos as ferramentas Adobe Illustrator e Adobe Photoshop.
 
-![Protótipo-alta-fidelidade-mobile](.src/img/readme/prototipo-alta-fidelidade-mobile.jpg)
-![Protótipo-alta-fidelidade-web](.src/img/readme/prototipo-alta-fidelidade-web.jpg)
+![Protótipo-alta-fidelidade-mobile](./src/img/readme/prototipo-alta-fidelidade-mobile.jpg)
+![Protótipo-alta-fidelidade-web](./src/img/readme/prototipo-alta-fidelidade-web.jpg)
 
 ### 5.1 Paleta de Cores
 
