@@ -115,15 +115,18 @@ header {
   background-color: #0b2675;
 }
 
-/* para desktop */
-/* @media only screen and (min-width:768px)  {
+@media only screen and (min-width:768px)  {
+  .iconMenuHamburguer {
+    display: none;
+  }
   .menu {
+    height: 4.5rem;
     display: flex;
     width: 83%;
     justify-content: space-between;
-  }
-  .iconMenuHamburguer {
-    display: none;
+    top: 0;
+    left: 17%;
+    align-items: center;
   }
   .menuList {
     list-style-type: none;
@@ -137,4 +140,4 @@ header {
     height: 45%;
     align-items: center;
   }
-} */
+}

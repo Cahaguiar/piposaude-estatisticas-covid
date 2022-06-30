@@ -36,18 +36,34 @@
 .tabelaMundial-titulos th,
 .tabelaBrasil-titulos th {
   padding: 0.5rem 0;
+  text-align: start;
 }
 
 .tabelaMundial h3,
 .tabelaBrasil h3 {
   background-color: #FFD9E9;
   padding: 10px;
+  text-align: center;
+}
+
+.containerSelect {
+  margin: 1rem 0;
+  display: flex;
+  color: #1139b0;
+  font-weight: 600;
+  justify-content: space-evenly;
 }
 
 .tabelaMundial-infos,
 .tabelaBrasil-infos {
   width: 90%;
   margin: 5px auto;
+}
+
+.scroll {
+  overflow-y: scroll;
+  height: 50rem;
+
 }
 
 .tabelaMundial-infos thead,
@@ -62,7 +78,6 @@ thead hr {
 .tabelaMundial-paises,
 .tabelaBrasil-estados {
   height: 3rem;
-  text-align: center;
 }
 
 tbody hr {
@@ -72,4 +87,30 @@ tbody hr {
 
 .paises {
   text-align: start;
+}
+
+@media only screen and (min-width:768px) {
+  .main {
+    width: 100%;
+  }
+  thead hr,
+  tbody hr {
+    width: 80%;
+    /* position: absolute; */
+  }
+  .containerSelect {
+    justify-content: start;
+    margin-left: 4rem;
+  }
+  .containerSelect select {
+    border: 1px solid #e7ecfd;
+    outline-color: #1139b0;
+  }
+  .select-state {
+    margin-left: 1rem;
+  }
+  .tabelaBrasil,
+  .tabelaMundial {
+    width: 90%;
+  }
 }

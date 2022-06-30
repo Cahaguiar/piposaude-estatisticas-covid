@@ -13,8 +13,8 @@ const Header = () => {
     <header>
       <section className={styles.headerSection}>
         <img src={logoAzul} alt='Logo Pipo Saúde' className={styles.logo} />
-        <section onClick={ToggleMode}>
-          <BiMenu className={styles.iconMenuHamburguer} />
+        <section onClick={ToggleMode} className={styles.iconMenuHamburguer}>
+          <BiMenu />
         </section>
         <nav className={`${styles.menu} ${active ? styles.menuOpen : styles.menuClose}`}>
           <ul className={styles.menuList}>

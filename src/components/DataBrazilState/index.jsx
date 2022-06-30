@@ -29,42 +29,47 @@ const DataBrazilState = () => {
 
   return (
     <section className={'tabelaBrasil'}>
-      <select className="select-state" onChange={handleChange}>
-        <option value="">Selecione um Estado</option>
-        {itemsBrazil.map((item) => {
-          return (
-            <option value={item.uf}> {item.state}</option>
-          )
-        }
-        )}
-      </select>
       <h3>Síntese de casos, óbitos e suspeitas do Covid-19 no Brasil</h3>
-      <table className={'tabelaBrasil-infos'}>
-        <thead>
-          <tr className={'tabelaBrasil-titulos'}>
-            <th>Estado</th>
-            <th>Casos</th>
-            <th>Óbitos</th>
-            <th>Suspeitas</th>
-          </tr>
-          <hr />
-        </thead>
-        <tbody>
-          {itemsSelect.map((item) => {
+      <div className={'containerSelect'}>
+        <p>Buscar por:</p>
+        <select className="select-state" onChange={handleChange}>
+          <option value="">Estado</option>
+          {itemsBrazil.map((item) => {
             return (
-              <>
-                <tr key={item.state} className={'tabelaBrasil-estados'}>
-                  <td className={'paises'}> {item.state}</td>
-                  <td> {item.cases}</td>
-                  <td> {item.deaths}</td>
-                  <td> {item.suspects}</td>
-                </tr>
-                <hr />
-              </>
-            );
-          })}
-        </tbody>
-      </table>
+              <option value={item.uf}> {item.state}</option>
+            )
+          }
+          )}
+        </select>
+      </div>
+      <div className={'scroll'}>
+        <table className={'tabelaBrasil-infos'}>
+          <thead>
+            <tr className={'tabelaBrasil-titulos'}>
+              <th>Estado</th>
+              <th>Casos</th>
+              <th>Óbitos</th>
+              <th>Suspeitas</th>
+            </tr>
+            <hr />
+          </thead>
+          <tbody>
+            {itemsSelect.map((item) => {
+              return (
+                <>
+                  <tr key={item.state} className={'tabelaBrasil-estados'}>
+                    <td className={'paises'}> {item.state}</td>
+                    <td> {item.cases}</td>
+                    <td> {item.deaths}</td>
+                    <td> {item.suspects}</td>
+                  </tr>
+                  <hr />
+                </>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </section>
   )    
 } 
