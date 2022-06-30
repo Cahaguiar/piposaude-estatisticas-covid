@@ -115,26 +115,29 @@ header {
   background-color: #0b2675;
 }
 
-/* para desktop */
-/* @media only screen and (min-width:768px)  { */
-  /* .menu { */
-    /* display: flex; */
-    /* width: 83%; */
-    /* justify-content: space-between; */
-  /* } */
-  /* .iconMenuHamburguer {
+@media only screen and (min-width:768px)  {
+  .iconMenuHamburguer {
     display: none;
-  } */
-  /* .menuList {
+  }
+  .menu {
+    height: 4.5rem;
+    display: flex;
+    width: 83%;
+    justify-content: space-between;
+    top: 0;
+    left: 17%;
+    align-items: center;
+  }
+  .menuList {
     list-style-type: none;
     justify-content: space-between;
     display: flex;
     height: 50%;
     align-items: center;
-  } */
-  /* .listOfLinkButtons {
+  }
+  .listOfLinkButtons {
     display: flex;
     height: 45%;
     align-items: center;
-  } */
-/* } */
+  }
+}
