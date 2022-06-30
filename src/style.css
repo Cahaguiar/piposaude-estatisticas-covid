@@ -112,5 +112,6 @@ tbody hr {
   .tabelaBrasil,
   .tabelaMundial {
     width: 90%;
+    margin-top: 2rem;
   }
 }
