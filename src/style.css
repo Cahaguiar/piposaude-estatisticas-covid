@@ -44,6 +44,14 @@
   padding: 10px;
 }
 
+.containerSelect {
+  margin: 1rem 0;
+  display: flex;
+  color: #1139b0;
+  font-weight: 600;
+  justify-content: space-evenly;
+}
+
 .tabelaMundial-infos,
 .tabelaBrasil-infos {
   width: 90%;

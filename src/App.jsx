@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { getDataBrazil, getDataByDate, getData } from "./services";
+import { getData } from "./services";
 import Header from "./components/header/header.jsx";
 import "./style.css";
 import DataBrazilState from "./components/DataBrazilState/index.jsx";
 import CalculateWorld from "./components/calculateWorld/calculateWorld.jsx";
+import DataBrazilTime from "./components/dataBrazilTime/dataBrazilTime";
 
 
 export default function CountryStatistics(props) {
 
   const [items, setItems] = useState([]);
-  const [itemsBrazil, setItemsBrazil] = useState([]);
+  // const [itemsBrazil, setItemsBrazil] = useState([]);
 
   useEffect(function () {
     getData()
@@ -22,49 +23,48 @@ export default function CountryStatistics(props) {
   }, []);
 
 
-  useEffect(function () {
-    getDataBrazil()
-      .then((response) => response.json())
-      .then((response) => {
-        setItemsBrazil(response.data);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+  // useEffect(function () {
+  //   getDataBrazil()
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       setItemsBrazil(response.data);
+  //     })
+  //     .catch((err) => console.error(err));
+  // }, []);
 
-  function getDateByTimeRange(numDays) {
-    const today = new Date();
-    const reqs = [];
-    for (let i = 0; i < numDays; i++) {
-      const currentDate = new Date(today);
-      currentDate.setDate(currentDate.getDate() - i);
-      const day = currentDate.getDate();
-      const month = currentDate.getMonth() + 1;
-      const year = currentDate.getFullYear();
-      const date =
-        year.toString() +
-        month.toString().padStart(2, "0") +
-        day.toString().padStart(2, "0");
-      const req = getDataByDate(date);
-      reqs.push(req);
-    }
+  // function getDateByTimeRange(numDays) {
+  //   const today = new Date();
+  //   const reqs = [];
+  //   for (let i = 0; i < numDays; i++) {
+  //     const currentDate = new Date(today);
+  //     currentDate.setDate(currentDate.getDate() - i);
+  //     const day = currentDate.getDate();
+  //     const month = currentDate.getMonth() + 1;
+  //     const year = currentDate.getFullYear();
+  //     const date =
+  //       year.toString() +
+  //       month.toString().padStart(2, "0") +
+  //       day.toString().padStart(2, "0");
+  //     const req = getDataByDate(date);
+  //     reqs.push(req);
+  //   }
+  //   Promise.all(reqs).then((values) => {
+  //     const dataByDate = values.map((item) => processData(item));
+  //   });
+  // }
 
-    Promise.all(reqs).then((values) => {
-      const dataByDate = values.map((item) => processData(item));
-    });
-  }
-
-  function processData({ data }) {
-    const dataInThisDay = data.reduce((acc, item) => {
-      acc.cases = item.cases + (acc.cases || 0);
-      acc.deaths = item.deaths + (acc.deaths || 0);
-      acc.suspects = item.suspects + (acc.suspects || 0);
-      acc.refuses = item.refuses + (acc.refuses || 0);
-      acc.datetime = item.datetime;
-      return acc;
-    }, {});
-    console.log(dataInThisDay)
-    return dataInThisDay;
-  }
+  // function processData({ data }) {
+  //   const dataInThisDay = data.reduce((acc, item) => {
+  //     acc.cases = item.cases + (acc.cases || 0);
+  //     acc.deaths = item.deaths + (acc.deaths || 0);
+  //     acc.suspects = item.suspects + (acc.suspects || 0);
+  //     acc.refuses = item.refuses + (acc.refuses || 0);
+  //     acc.datetime = item.datetime;
+  //     return acc;
+  //   }, {});
+  //   console.log(dataInThisDay)
+  //   return dataInThisDay;
+  // }
 
   return (
     <>
@@ -72,7 +72,8 @@ export default function CountryStatistics(props) {
       <main className={'App main'}>
         <h1><p>COVID19</p>Painel Coronavírus</h1>
         <CalculateWorld />
-        
+        <DataBrazilState />
+        <DataBrazilTime />
         <section className={'tabelaMundial'}>
           <h3>Síntese de casos, óbitos e novos casos do Covid-19 no mundo</h3>
           <table className={'tabelaMundial-infos'}>
@@ -102,7 +103,6 @@ export default function CountryStatistics(props) {
             </tbody>
           </table>
         </section>
-        <DataBrazilState />
       </main>
     </>
   );
