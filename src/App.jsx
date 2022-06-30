@@ -5,6 +5,7 @@ import "./style.css";
 import DataBrazilState from "./components/DataBrazilState/index.jsx";
 import CalculateWorld from "./components/calculateWorld/calculateWorld.jsx";
 import DataBrazilTime from "./components/dataBrazilTime/dataBrazilTime";
+import Footer from "./components/footer/footer";
 
 
 export default function CountryStatistics(props) {
@@ -61,6 +62,7 @@ export default function CountryStatistics(props) {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
