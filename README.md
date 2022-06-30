@@ -54,7 +54,7 @@ A estrategia seguida para definir os requisitos e a priorização da implementa�
 - [x] **Exibição dos dados dos Países em tabela com Casos, Novos Casos e Óbitos**
 - [x] **Exibição dos dados do Brasil em tabelas para filtro de estado e periodo**
 - [x] **Exibição dos dados do Brasil em grafico para Casos, Óbitos e Suspeitos**
-- [x] **Mobile-irst**
+- [x] **Mobile-First**
 - [x] **Responsividade**
 - [x] **Deploy em hosting público - GitHub Pages**
 
@@ -117,7 +117,7 @@ Este projeto foi desenvolvido durante o Talent Fest da Laboratória, Turma 007 p
       <img src="./src/img/readme/camila_circle_f.png" height="120px" alt="foto-camila-aguiar">
         </a>    
       <p align="center">
-        <a href="https://www.linkedin.com/in/camila-aguiar-santiago/" _blank>Camila Aguiar Santiago</a>
+        <a href="https://www.linkedin.com/in/camila-aguiar-santiago/" _blank>Camila Aguiar</a>
       </p>
     </td>    
     <td>
@@ -125,7 +125,7 @@ Este projeto foi desenvolvido durante o Talent Fest da Laboratória, Turma 007 p
       <img src="./src/img/readme/cassia_circle_f.png" height="120px" alt="foto-cassia-costa">
         </a>       
       <p align="center">
-        <a href="https://www.linkedin.com/in/cassia-costa/" _blank>Cássia Costa</a>
+        <a href="https://www.linkedin.com/in/cassia-costa/" _blank> Cássia Costa </a>
       </p>
     </td>
     <td>
