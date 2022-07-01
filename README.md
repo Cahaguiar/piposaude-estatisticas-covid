@@ -7,7 +7,7 @@
   - [2. Desafio](#2-desafio)
   - [3. Metodologia Ágil](#3-metodologia-ágil)
   - [4. Features do Produto Mínimo Viável (MVP)](#4-features-do-produto-mínimo-viável-(MVP))
-  - [5. Protótipo](#5-protótipo)
+  - [5. Protótipos](#5-protótipos)
   - [6. Ferramentas Utilizadas](#6-ferramentas-utilizadas)
   - [7. Como usar](#7-como-usar)
   - [8. Desenvolvedoras](#8-desenvolvedoras)
@@ -23,12 +23,11 @@ Conhecer mais sobre a Pipo aqui [AQUI](https://www.piposaude.com.br/).
 
 ## 2. Desafio
 
-A Pipo Saúde é uma corretora de benefícios de saúde que apoia o RH e oferece uma experiência incrível aos colaboradores, otimizando a relação das empresas na compra e gestão de benefícios.
 Fomos desafiadas pela Pipo a desenvolver uma aplicação web que permitisse aos usuários acompanharem o histórico de estatísticas do Covid-19 no Brasil e no mundo, assim como as últimas atualizações em tempo real.
-A ideia é que o usuário seja capaz de visualizar o progresso da pandemia em diferentes países. 
-Para isso, seria interessante que a aplicação fornecesse dados como, por exemplo, número de óbitos, número total de casos, número de novos casos, entre outros dados relevantes.
-Seria ainda mais incrível se no caso do Brasil, pudéssemos filtrar os dados por estado, ou filtrar os dados em um intervalo temporal, por exemplo.
-A aplicação deve ser capaz de exibir os dados em tabelas, gráficos e geocharts. O grupo deve definir qual a melhor experiência de usuário que permita-o visualizar asestatísticas nesses formatos distintos.
+
+A ideia é que o usuário seja capaz de visualizar o progresso da pandemia em diferentes países. Para isso, seria interessante que a aplicação fornecesse dados como, por exemplo, número de óbitos, número total de casos, número de novos casos, entre outros dados relevantes.
+
+Seria ainda mais incrível se no caso do Brasil, pudéssemos filtrar os dados por estado, ou filtrar os dados em um intervalo temporal, por exemplo. A aplicação deve ser capaz de exibir os dados em tabelas, gráficos e geocharts. O grupo deve definir qual a melhor experiência de usuário que permita-o visualizar asestatísticas nesses formatos distintos.
 
 Conhecer nossa solução [AQUI](https://cassiacosta.github.io/piposaude-estatisticas-covid/).
 
